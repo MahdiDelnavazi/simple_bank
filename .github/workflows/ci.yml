@@ -14,7 +14,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12-alpine
+        image: postgres:12
         env:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: secret
@@ -35,7 +35,7 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: install golang-migrate
+      - name: Install golang-migrate
         run: |
           curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.1/migrate.linux-amd64.tar.gz | tar xvz
           sudo mv migrate /usr/bin/migrate
