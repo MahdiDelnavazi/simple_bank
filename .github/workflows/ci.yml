@@ -9,14 +9,15 @@ on:
 jobs:
 
   test:
+    name: Test
     runs-on: ubuntu-latest
 
     services:
       postgres:
         image: postgres:12-alpine
         env:
-          POSTGRES_PASSWORD: secret
           POSTGRES_USER: root
+          POSTGRES_PASSWORD: secret
           POSRGRES_DB: simple_bank
         ports:
           - 5432:5432
